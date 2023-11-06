@@ -14,10 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             profili.innerHTML = `
         <p style="color: lightblue">Name: ${data.name} </p>
         <p style="color: red">Surname: ${data.surname} </p>
-        <p>Licence Categor
-        
-        
-        y: ${data.licenceCategory}</p>
+        <p>Licence Category: ${data.licenceCategory}</p>
         <input type="checkbox" ${data.active ? 'checked' : ''} disabled readonly>
         `
         } else {

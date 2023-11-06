@@ -11,4 +11,9 @@ class ApiDriver {
         console.log(response)
         return await response.json();
     }
+
+    async removeById(driverId) {
+        const response = await fetch(`${this.url}/${driverId}`, {method: "DELETE"});
+        return await response.text();
+    }
 }

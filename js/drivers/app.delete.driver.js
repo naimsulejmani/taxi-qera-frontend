@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const profili = document.getElementById('profili');
+    const btnDeleteDriver = document.getElementById('btnDeleteDriver');
 
     async function loadData() {
         const driverId = window.location.search.split('=')[1].trim();
@@ -15,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <p style="color: red">Surname: ${data.surname} </p>
         <p>Licence Category: ${data.licenceCategory}</p>
         <input type="checkbox" ${data.active ? 'checked' : ''} disabled readonly>
-        `
+        `;
+            btnDeleteDriver.style.display = 'block';
         } else {
             profili.innerHTML = `<div>
             <p style="color:red">404 Resource Not Found</p>
@@ -24,5 +26,21 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>`
         }
     }
+
     loadData()
+
+    async function deleteDriver() {
+        const driverId = window.location.search.split('=')[1].trim();
+        const apiDriver = new ApiDriver();
+        const response = await apiDriver.removeById(driverId);
+        console.log(response);
+        if (!response) {
+            // window.location.pathname = '/taxi-qera-frontend/pages/drivers/list.html'
+            window.location.href = './list.html'
+        }
+    }
+
+    btnDeleteDriver.addEventListener("click", function () {
+        deleteDriver();
+    })
 });

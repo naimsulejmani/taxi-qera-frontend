@@ -8,6 +8,7 @@ class ApiDriver {
 
     async findById(driverId) {
         const response = await fetch(`${this.url}/${driverId}`);
+        console.log(response)
         return await response.json();
     }
 }

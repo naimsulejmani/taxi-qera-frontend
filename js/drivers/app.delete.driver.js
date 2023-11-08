@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function deleteDriver() {
         const driverId = window.location.search.split('=')[1].trim();
+
+        if (!confirm("Are you sure that you want to delete driver with id: " + driverId))
+            return;
+
         const apiDriver = new ApiDriver();
         const response = await apiDriver.removeById(driverId);
         console.log(response);

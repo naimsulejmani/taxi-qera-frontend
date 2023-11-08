@@ -6,9 +6,7 @@ class Driver {
         licenceCategory,
         birthdate,
         registerDate,
-        active = true,
-        createdAt,
-        createdBy
+        active = true
     ) {
         this.id = id;
         this.name = name;
@@ -17,8 +15,8 @@ class Driver {
         this.birthdate = birthdate;
         this.registerDate = registerDate;
         this.active = active;
-        this.createdAt = createdAt;
-        this.createdBy = createdBy;
+        this.createdAt = new Date();
+        this.createdBy = "admin";
     }
 
     toTableRow() {

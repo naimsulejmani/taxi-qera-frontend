@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const apiDriver = new ApiDriver();
         await apiDriver.register(driver);
+        window.location.href = "./list.html"
 
     }
 

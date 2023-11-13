@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <td>${driver.id}</td>
                     <td>${driver.name}</td>
                     <td>${driver.surname}</td>
-                    <td>${driver.active}</td>
+                    <td><input type="checkbox" ${driver.active ? "checked" : ""} style="width: 25px; height: 25px"></td>
                     <td>${driver.licenceCategory}</td>
                     <td>
                         <a class="btn btn-light" href="./view.html?driverId=${driver.id}">

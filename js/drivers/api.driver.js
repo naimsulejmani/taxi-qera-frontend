@@ -30,4 +30,33 @@ class ApiDriver {
             });
         return await response.text();
     }
+
+    async update(driverId, driver) {
+        const response = await fetch(this.url + '/' + driverId,
+            {
+                method: "PUT",
+                body: JSON.stringify(driver),
+
+                headers: {
+                    "Content-Type": "application/json"
+                    // "Authorization" : "Bearer asdjlsadjsalkjdakjlsadjlaksdjlkad"
+                }
+            });
+        return await response.text();
+    }
+
+    async changeStatus(driverId, active) {
+        const response = await fetch(this.url + '/' + driverId,
+            {
+                method: "PATCH",
+                body: JSON.stringify({active}),
+
+                headers: {
+                    "Content-Type": "application/json"
+                    // "Authorization" : "Bearer asdjlsadjsalkjdakjlsadjlaksdjlkad"
+                }
+            });
+        return await response.text();
+    }
+
 }

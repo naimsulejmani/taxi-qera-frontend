@@ -35,6 +35,14 @@
             self.profWins = '1';
         }
 
+        self.getResults = function (isStudent) {
+            if (isStudent) {
+                return self.results.filter(t => t.students > t.professors).length;
+            } else {
+                return self.results.filter(t => t.professors > t.students).length;
+            }
+        }
+
         self.add = function () {
             // setInterval(()=>{
             //     self.results.push(
@@ -51,6 +59,7 @@
 
             // self.results = [...self.results]
             self.refresh('results');
+            self.refresh('getResults');
 
         }
 
@@ -73,6 +82,13 @@
                 <td>{{self.professors}}</td>
             </tr>
         </tbody>
+        <tfooter>
+            <tr>
+                <td>Total</td>
+                <td>{{self.getResults(true)}}</td>
+                <td>{{self.getResults(false)}}</td>
+            </tr>
+        </tfooter>
     </table>
     </div>
     <div>

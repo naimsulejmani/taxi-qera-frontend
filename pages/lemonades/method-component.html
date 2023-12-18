@@ -36,14 +36,21 @@
         }
 
         self.add = function () {
-            setInterval(()=>{
-                self.results.push(
-                    {map: self.newMap, students: self.studWins, professors: self.profWins}
-                );
+            // setInterval(()=>{
+            //     self.results.push(
+            //         {map: self.newMap, students: self.studWins, professors: self.profWins}
+            //     );
+            //
+            //     // self.results = [...self.results]
+            //     self.refresh('results');
+            // }, 1000)
 
-                // self.results = [...self.results]
-                self.refresh('results');
-            }, 1000)
+            self.results.push(
+                {map: self.newMap, students: self.studWins, professors: self.profWins}
+            );
+
+            // self.results = [...self.results]
+            self.refresh('results');
 
         }
 

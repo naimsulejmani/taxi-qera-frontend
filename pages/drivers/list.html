@@ -148,35 +148,20 @@
     </div>
 </nav>
 
-<div class="container my-3">
-    <main>
-        <h2>Lista e shofereve</h2>
-        <div class="my-1">
-            <a href="./new.html" class="btn btn-primary">NEW</a>
-        </div>
-        <div class="table-responsive small">
-            <table class="table table-striped table-sm" >
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Surname</th>
-                    <th scope="col">Active</th>
-                    <th scope="col">Licence Category</th>
-                    <th scope="col">(actions)</th>
-                </tr>
-                </thead>
-                <tbody id="tableDriverBody">
+<div class="container my-3" id="root">
 
-                </tbody>
-            </table>
-        </div>
-    </main>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 <script src="../../js/drivers/api.driver.js"></script>
-<script src="../../js/drivers/model.driver.js"></script>
-<script src="../../js/drivers/app.list.driver.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lemonadejs/dist/lemonade.min.js"></script>
+<script src="../../js/drivers/list.component.js"></script>
+
+<script>
+    // Render the component
+    lemonade.render(ListDrivers, document.getElementById('root'));
+</script>
+<!--<script src="../../js/drivers/app.list.driver.js"></script>-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

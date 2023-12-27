@@ -152,77 +152,21 @@
     <form>
         <h2>Regjistro Shofer te ri!</h2>
         <hr>
-        <div id="profili">
-            <div class="row g-3">
-                <div class="col">
-                    <label for="txtName" class="col-form-label">Name</label>
-                </div>
-                <div class="col">
-                    <input type="text" id="txtName" class="form-control">
-                </div>
-            </div>
-            <div class="row g-3 my-1">
-                <div class="col">
-                    <label for="txtSurname" class="col-form-label">Surname</label>
-                </div>
-                <div class="col">
-                    <input type="text" id="txtSurname" class="form-control">
-                </div>
-            </div>
+        <div id="root">
 
-            <div class="row g-3 my-1">
-                <div class="col">
-                    <label for="txtBirthdate" class="col-form-label">Birthdate</label>
-                </div>
-                <div class="col">
-                    <input type="date" id="txtBirthdate" class="form-control">
-                </div>
-            </div>
-
-            <div class="row g-3 my-1">
-                <div class="col">
-                    <label for="ddlLicenceCategory" class="col-form-label">Licence Category</label>
-                </div>
-                <div class="col">
-                    <select class="form-select" aria-label="Default select example" id="ddlLicenceCategory">
-                        <option selected value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row g-3 my-1">
-                <div class="col">
-                    <label for="txtRegisterDate" class="col-form-label">Register Date</label>
-                </div>
-                <div class="col">
-                    <input type="date" id="txtRegisterDate" class="form-control">
-                </div>
-            </div>
-
-            <div class="row g-3 my-1">
-                <div class="col">
-                    <label for="chbActive" class="col-form-label">Is Active</label>
-                </div>
-                <div class="col">
-                    <input type="checkbox" id="chbActive" style="width: 35px; height: 35px;">
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col"><button class="btn btn-lg btn-primary" id="btnSave" type="submit">SAVE</button></div>
-            <div class="col"><button class="btn btn-lg btn-warning" id="btnReset" type="reset">Reset</button></div>
-            <div class="col"><button class="btn btn-lg btn-danger" id="btnCancel" type="button">Cancel</button></div>
         </div>
     </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 <script src="../../js/drivers/api.driver.js"></script>
 <script src="../../js/drivers/model.driver.js"></script>
-<script src="../../js/drivers/app.new.driver.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lemonadejs/dist/lemonade.min.js"></script>
+<script src="../../js/drivers/save.component.js"></script>
+
+<script>
+    // Render the component
+    lemonade.render(SaveDriver, document.getElementById('root'));
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

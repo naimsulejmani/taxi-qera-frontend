@@ -72,7 +72,7 @@ class ApiDriver {
         //         }
         //     });
         // return await response.text();
-        const response = await axios.patch(this.url + '/' + driverId, driver)
+        const response = await axios.patch(this.url + '/' + driverId, {active})
         return response.status === 200 || response.status === 201 ? response.data : "NOT REGISTERED"
     }
 

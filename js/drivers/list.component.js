@@ -1,4 +1,22 @@
+
+function CheckboxInput() {
+
+    const self = this;
+
+    self.update = async function() {
+        const apiDriver = new ApiDriver();
+        await apiDriver.changeStatus(self.driver_id, !self.active);
+        const parent = lemonade.get('ListDrivers');
+        parent.refresh();
+    }
+
+    return self.active
+        ? `<div> <input onclick="self.update()" type="checkbox" checked style="width: 25px; height: 25px" :bind="self.active"/> </div>`
+        : `<div> <input onclick="self.update()" type="checkbox" style="width: 25px; height: 25px" :bind="self.active"/> </div>`
+}
+
 function ListDrivers() {
+
     const self = this;
     const api = new ApiDriver();
 
@@ -39,9 +57,9 @@ function ListDrivers() {
                     <td>{{self.id}}</td>
                     <td>{{self.name}}</td>
                     <td>{{self.surname}}</td>
-                    <td>{{self.active ? <input class="statusChange" type="checkbox" checked style="width: 25px; height: 25px"
-                    data-driverId="{{self.id}}"/> : <input class="statusChange" type="checkbox" style="width: 25px; height: 25px"
-                    data-driverId="{{self.id}}"/>}}</td>
+                    <td>
+                        <CheckboxInput active="{{self.active}}" driver_id="{{self.id}}"></CheckboxInput>
+                    </td>
                     <td>{{self.licenceCategory}}</td>
                     <td>
                         <a class="btn btn-light" href="./view.html?driverId={{self.id}}">
@@ -70,3 +88,5 @@ function ListDrivers() {
         </div>
     </main>`
 }
+
+lemonade.setComponents({ CheckboxInput });

@@ -19,9 +19,7 @@ function ViewDriver() {
                 <td>{{self.driver.name}}</td>
             </tr>
              <tr>
-                <
-                
-                th>Surname</th> 
+                <th>Surname</th> 
                 <td>{{self.driver.surname}}</td>
             </tr>
             <tr>

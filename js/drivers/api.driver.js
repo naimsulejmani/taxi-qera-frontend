@@ -15,7 +15,7 @@ class ApiDriver {
         // return await response.json();
 
         const response = await axios.get(`${this.url}/${driverId}`);
-        return response.status === 200 ? response.data : [];
+        return response.status === 200 ? response.data : null;
     }
 
     async removeById(driverId) {
